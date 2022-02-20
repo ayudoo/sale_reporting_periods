@@ -1,0 +1,223 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sale_reporting_periods
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-20 15:21+0000\n"
+"PO-Revision-Date: 2022-02-20 15:21+0000\n"
+"Last-Translator: <mj@ayudoo.bg>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sale_reporting_periods
+#: code:addons/sale_reporting_periods/models/sales_period.py:0
+#, python-format
+msgid "%s (copy)"
+msgstr "%s (Kopie)"
+
+#. module: sale_reporting_periods
+#: model:ir.model.fields,field_description:sale_reporting_periods.field_sale_reporting_periods_sales_period__active
+msgid "Active"
+msgstr "Aktiv"
+
+#. module: sale_reporting_periods
+#: model:ir.model.fields.selection,name:sale_reporting_periods.selection__sale_reporting_periods_sales_period__assign_to__all
+msgid "All"
+msgstr "Alle"
+
+#. module: sale_reporting_periods
+#: model_terms:ir.ui.view,arch_db:sale_reporting_periods.view_sales_period_form
+#: model_terms:ir.ui.view,arch_db:sale_reporting_periods.view_sales_periods_search
+msgid "Archived"
+msgstr "Archiviert"
+
+#. module: sale_reporting_periods
+#: model:ir.model.fields,field_description:sale_reporting_periods.field_sale_reporting_periods_sales_period__assign_to
+msgid "Assign To"
+msgstr "Zuweisen an"
+
+#. module: sale_reporting_periods
+#: model_terms:ir.ui.view,arch_db:sale_reporting_periods.view_sales_periods_search
+msgid "Automatically Assigned"
+msgstr "Automatisch zugewiesen"
+
+#. module: sale_reporting_periods
+#: model:ir.model.fields.selection,name:sale_reporting_periods.selection__sale_reporting_periods_sales_period__assign_to__condition
+msgid "Complex Condition"
+msgstr "Komplexe Bedingung"
+
+#. module: sale_reporting_periods
+#: model_terms:ir.ui.view,arch_db:sale_reporting_periods.view_sales_period_form
+msgid "Conditions"
+msgstr "Bedingungen"
+
+#. module: sale_reporting_periods
+#: model:ir.model,name:sale_reporting_periods.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: sale_reporting_periods
+#: model:ir.model.fields,field_description:sale_reporting_periods.field_sale_reporting_periods_sales_period__create_uid
+msgid "Created by"
+msgstr "Erstellt von"
+
+#. module: sale_reporting_periods
+#: model:ir.model.fields,field_description:sale_reporting_periods.field_sale_reporting_periods_sales_period__create_date
+msgid "Created on"
+msgstr "Erstellt am"
+
+#. module: sale_reporting_periods
+#: model:ir.model.fields,field_description:sale_reporting_periods.field_sale_reporting_periods_sales_period__date_from
+#: model_terms:ir.ui.view,arch_db:sale_reporting_periods.view_sales_periods_search
+msgid "Date From"
+msgstr "Anfangsdatum"
+
+#. module: sale_reporting_periods
+#: model:ir.model.fields,field_description:sale_reporting_periods.field_sale_reporting_periods_sales_period__date_to
+#: model_terms:ir.ui.view,arch_db:sale_reporting_periods.view_sales_periods_search
+msgid "Date To"
+msgstr "Enddatum"
+
+#. module: sale_reporting_periods
+#: model:ir.model.fields,field_description:sale_reporting_periods.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:sale_reporting_periods.field_sale_order__display_name
+#: model:ir.model.fields,field_description:sale_reporting_periods.field_sale_report__display_name
+#: model:ir.model.fields,field_description:sale_reporting_periods.field_sale_reporting_periods_sales_period__display_name
+msgid "Display Name"
+msgstr "Anzeigename"
+
+#. module: sale_reporting_periods
+#: model:ir.model.fields,field_description:sale_reporting_periods.field_res_config_settings__id
+#: model:ir.model.fields,field_description:sale_reporting_periods.field_sale_order__id
+#: model:ir.model.fields,field_description:sale_reporting_periods.field_sale_report__id
+#: model:ir.model.fields,field_description:sale_reporting_periods.field_sale_reporting_periods_sales_period__id
+msgid "ID"
+msgstr ""
+
+#. module: sale_reporting_periods
+#: model:ir.model.fields,help:sale_reporting_periods.field_sale_reporting_periods_sales_period__active
+msgid ""
+"If the active field is set to false, it will allow you to hide it without "
+"removing it."
+msgstr ""
+"Deaktivieren erlaubt es Ihnen, einen Eintrag zu verstecken, ohne ihn zu "
+"löschen."
+
+#. module: sale_reporting_periods
+#: model:ir.model.fields,field_description:sale_reporting_periods.field_res_config_settings____last_update
+#: model:ir.model.fields,field_description:sale_reporting_periods.field_sale_order____last_update
+#: model:ir.model.fields,field_description:sale_reporting_periods.field_sale_report____last_update
+#: model:ir.model.fields,field_description:sale_reporting_periods.field_sale_reporting_periods_sales_period____last_update
+msgid "Last Modified on"
+msgstr "Zuletzt geändert am"
+
+#. module: sale_reporting_periods
+#: model:ir.model.fields,field_description:sale_reporting_periods.field_sale_reporting_periods_sales_period__write_uid
+msgid "Last Updated by"
+msgstr "Zuletzt aktualisiert durch"
+
+#. module: sale_reporting_periods
+#: model:ir.model.fields,field_description:sale_reporting_periods.field_sale_reporting_periods_sales_period__write_date
+msgid "Last Updated on"
+msgstr "Zuletzt aktualisiert am"
+
+#. module: sale_reporting_periods
+#: model:ir.model.fields,field_description:sale_reporting_periods.field_sale_reporting_periods_sales_period__name
+msgid "Name"
+msgstr ""
+
+#. module: sale_reporting_periods
+#: model:ir.model.fields.selection,name:sale_reporting_periods.selection__sale_reporting_periods_sales_period__assign_to__none
+msgid "None"
+msgstr "Keine"
+
+#. module: sale_reporting_periods
+#: model_terms:ir.ui.view,arch_db:sale_reporting_periods.view_sales_periods_search
+msgid "Not Automatically Assigned"
+msgstr "Nicht Automatisch zugewiesen"
+
+#. module: sale_reporting_periods
+#: model:ir.model.fields,field_description:sale_reporting_periods.field_sale_reporting_periods_sales_period__order_domain
+#: model_terms:ir.ui.view,arch_db:sale_reporting_periods.view_sales_period_form
+msgid "Orders"
+msgstr "Aufträge"
+
+#. module: sale_reporting_periods
+#: model_terms:ir.ui.view,arch_db:sale_reporting_periods.res_config_settings_view_form
+msgid "Organize your quotations and sale order with sales periods"
+msgstr "Organisieren sie ihre Angebote und Aufträge mit Verkaufszeiträumen"
+
+#. module: sale_reporting_periods
+#: model_terms:ir.ui.view,arch_db:sale_reporting_periods.res_config_settings_view_form
+msgid "Recompute Sales Periods on Sale Orders"
+msgstr "Verkaufszeiträume von Aufträgen neu berechnen"
+
+#. module: sale_reporting_periods
+#: model_terms:ir.ui.view,arch_db:sale_reporting_periods.view_sales_period_form
+msgid "Recompute Target Sales Periods"
+msgstr "Ziel-Verkaugszeiträume neu berechnen"
+
+#. module: sale_reporting_periods
+#: model:ir.model.fields,field_description:sale_reporting_periods.field_sale_reporting_periods_sales_period__sale_order_count
+msgid "Sales Order Count"
+msgstr "# Verkaufsaufträge"
+
+#. module: sale_reporting_periods
+#: model_terms:ir.ui.view,arch_db:sale_reporting_periods.view_sales_period_tree
+#: model:ir.model,name:sale_reporting_periods.model_sale_order
+msgid "Sales Orders"
+msgstr "Verkaufsaufträge"
+
+#. module: sale_reporting_periods
+#: model:ir.model,name:sale_reporting_periods.model_sale_report
+msgid "Sales Analysis Report"
+msgstr "Verkaufsanalysebericht"
+
+#. module: sale_reporting_periods
+#: model:ir.model.fields,field_description:sale_reporting_periods.field_sale_reporting_periods_sales_period__sale_order_ids
+msgid "Sales Orders"
+msgstr "Verkaufsaufträge"
+
+#. module: sale_reporting_periods
+#: model:ir.model,name:sale_reporting_periods.model_sale_reporting_periods_sales_period
+#: model:ir.model.fields,field_description:sale_reporting_periods.field_sale_order__sales_period_id
+#: model:ir.model.fields,field_description:sale_reporting_periods.field_sale_report__sales_period_id
+#: model_terms:ir.ui.view,arch_db:sale_reporting_periods.view_order_product_search
+#: model_terms:ir.ui.view,arch_db:sale_reporting_periods.view_sales_period_form
+#: model_terms:ir.ui.view,arch_db:sale_reporting_periods.view_sales_period_tree
+msgid "Sales Period"
+msgstr "Verkaufszeitraum"
+
+#. module: sale_reporting_periods
+#: model_terms:ir.ui.view,arch_db:sale_reporting_periods.view_sales_periods_search
+msgid "Sales Period Search"
+msgstr "Verkaugszeitraum Suche"
+
+#. module: sale_reporting_periods
+#: model:ir.actions.act_window,name:sale_reporting_periods.action_sales_period
+#: model:ir.ui.menu,name:sale_reporting_periods.menu_sale_report_sales_periods
+#: model_terms:ir.ui.view,arch_db:sale_reporting_periods.res_config_settings_view_form
+msgid "Sales Periods"
+msgstr "Verkaufszeiträume"
+
+#. module: sale_reporting_periods
+#: model:ir.model.fields,field_description:sale_reporting_periods.field_sale_reporting_periods_sales_period__sequence
+msgid "Sequence"
+msgstr "Sequenz"
+
+#. module: sale_reporting_periods
+#: model:ir.model.constraint,message:sale_reporting_periods.constraint_sale_reporting_periods_sales_period_unique_name
+msgid "The name already exists"
+msgstr "Der Name existiert bereits"
+
+#. module: sale_reporting_periods
+#: code:addons/sale_reporting_periods/models/sales_period.py:0
+#, python-format
+msgid "The start date must be earlier than the end date."
+msgstr "Das Anfangsdatum muss vor dem Enddatum liegen."

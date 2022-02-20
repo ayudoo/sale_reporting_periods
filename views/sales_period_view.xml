@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <record id="view_sales_periods_search" model="ir.ui.view">
+      <field name="name">sale_reporting_periods.sales_period.search</field>
+      <field name="model">sale_reporting_periods.sales_period</field>
+      <field name="arch" type="xml">
+        <search string="Sales Period Search">
+          <field name="name"/>
+          <separator/>
+          <filter
+            name="auto_assign"
+            string="Automatically Assigned"
+            domain="[('assign_to', 'in', ['all', 'condition'])]"/>
+          <filter
+            name="no_auto_assign"
+            string="Not Automatically Assigned"
+            domain="[('assign_to', '=', 'none')]"/>
+          <separator/>
+          <filter string="Archived" name="inactive" domain="[('active','=',False)]"/>
+          <separator/>
+          <filter string="Date From" name="date_from" date="date_from"/>
+          <separator/>
+          <filter string="Date To" name="date_to" date="date_to"/>
+        </search>
+      </field>
+    </record>
+
+    <record id="view_sales_period_form" model="ir.ui.view">
+      <field name="name">sale_reporting_periods.sales_period.form</field>
+      <field name="model">sale_reporting_periods.sales_period</field>
+      <field name="arch" type="xml">
+        <form string="Sales Period">
+          <sheet>
+            <div class="oe_button_box" name="button_box"/>
+            <field name="active" invisible="1"/>
+            <widget
+              name="web_ribbon"
+              title="Archived"
+              bg_sales_period="bg-danger"
+              attrs="{'invisible': [('active', '=', True)]}"/>
+            <group>
+              <group string="Sales Period">
+                <field name="name"/>
+                <field name="assign_to"/>
+              </group>
+              <group
+                string="Conditions"
+                attrs="{'invisible': [('assign_to', 'not in', ['all', 'condition'])]}">
+                <field name="date_from"/>
+                <field name="date_to"/>
+                <field
+                  name="order_domain"
+                  widget="domain"
+                  attrs="{'invisible': [('assign_to', '!=', 'condition')]}"
+                  context="{
+                    'preview_sales_period_date_from': date_from,
+                    'preview_sales_period_date_to': date_to,
+                  }"
+                  options="{'model': 'sale.order'}"/>
+                <div colspan="2">
+                  <button
+                    name='action_recompute_target_sales_periods'
+                    icon="fa-refresh"
+                    type="object"
+                    string="Recompute Target Sales Periods"
+                    class="btn-link oe_read_only"/>
+                </div>
+              </group>
+            </group>
+            <notebook>
+              <page name="sale_orders" string="Orders">
+                <group>
+                  <field name="sale_order_ids" nolabel="1"/>
+                </group>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="view_sales_period_tree" model="ir.ui.view">
+      <field name="name">sale_reporting_periods.sales_period.tree</field>
+      <field name="model">sale_reporting_periods.sales_period</field>
+      <field name="arch" type="xml">
+        <tree string="Sales Period">
+          <field name="sequence" widget="handle"/>
+          <field name="name"/>
+          <field name="assign_to"/>
+          <field name="date_from"/>
+          <field name="date_to"/>
+          <field name="sale_order_count" string="Sales Orders"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="action_sales_period" model="ir.actions.act_window">
+      <field name="name">Sales Periods</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">sale_reporting_periods.sales_period</field>
+      <field name="view_id" ref="view_sales_period_tree"/>
+    </record>
+
+    <menuitem
+      id="menu_sale_report_sales_periods"
+      name="Sales Periods"
+      action="action_sales_period"
+      parent="sale.menu_sale_report"
+      sequence="99"/>
+
+  </data>
+</odoo>

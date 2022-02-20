@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="view_order_product_search" model="ir.ui.view">
+    <field name="name">sale.report.search</field>
+    <field name="model">sale.report</field>
+    <field name="inherit_id" ref="sale.view_order_product_search"/>
+    <field name="arch" type="xml">
+      <field name="team_id" position="after">
+        <field name="sales_period_id"/>
+      </field>
+      <filter name="sales_channel" position="after">
+        <filter
+          string="Sales Period"
+          name="sales_period"
+          context="{'group_by':'sales_period_id', 'order': 'sales_period_id desc'}"/>
+      </filter>
+    </field>
+  </record>
+</odoo>
