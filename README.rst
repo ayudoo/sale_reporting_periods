@@ -5,9 +5,8 @@ Sale Reporting Periods
    :target: http://www.gnu.org/licenses/lgpl-3.0-standalone.html
    :alt: License: LGPL-3
 
-**Work in progress, feel free to provide feedback**
 
-Filter and organize your quotations and sale orders by you custom sales periods.
+Filter and organize your sale orders by you custom sales periods.
 
 
 **Table of contents**
