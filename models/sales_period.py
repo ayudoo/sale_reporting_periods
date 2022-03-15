@@ -46,7 +46,9 @@ class SalesPeriod(models.Model):
 
     @api.constrains("date_from", "date_to")
     def check_dates(self):
-        if self.filtered(lambda r: r.date_from > r.date_to):
+        if self.filtered(
+            lambda r: r.date_from and r.date_to and r.date_from > r.date_to
+        ):
             raise ValidationError(
                 _("The start date must be earlier than the end date.")
             )
