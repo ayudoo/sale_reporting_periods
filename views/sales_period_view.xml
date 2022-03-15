@@ -89,8 +89,8 @@
           <field name="sequence" widget="handle"/>
           <field name="name"/>
           <field name="assign_to"/>
-          <field name="date_from"/>
-          <field name="date_to"/>
+          <field name="date_from" attrs="{'invisible': [('assign_to', '=', 'none')]}"/>
+          <field name="date_to" attrs="{'invisible': [('assign_to', '=', 'none')]}"/>
           <field name="sale_order_count" string="Sales Orders"/>
         </tree>
       </field>
