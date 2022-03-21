@@ -1,5 +1,6 @@
 import logging
 from odoo import api, fields, models
+from odoo.osv import expression
 
 _logger = logging.getLogger(__name__)
 
@@ -8,15 +9,35 @@ class SaleOrder(models.Model):
     _inherit = "sale.order"
 
     def _get_sales_period_base_domain(self):
-        return [
-            ("assign_to", "in", ["all", "condition"]),
+        date_domain = [
+            ("assignment_time", "=", "create_date"),
             ("|"),
-            ("date_from", "<=", self.date_order),
+            ("date_from", "<=", self.create_date),
             ("date_from", "=", False),
             ("|"),
-            ("date_to", ">=", self.date_order),
+            ("date_to", ">=", self.create_date),
             ("date_to", "=", False),
         ]
+
+        if self.state in ["sale", "done"] and self.date_order:
+            date_domain = expression.OR(
+                [
+                    date_domain,
+                    [
+                        ("assignment_time", "=", "order_date"),
+                        ("|"),
+                        ("date_from", "<=", self.date_order),
+                        ("date_from", "=", False),
+                        ("|"),
+                        ("date_to", ">=", self.date_order),
+                        ("date_to", "=", False),
+                    ],
+                ]
+            )
+
+        return expression.AND(
+            [[("assign_to", "in", ["all", "condition"])], date_domain]
+        )
 
     def _get_default_sales_period(self):
         SalesPeriod = self.env["sale_reporting_periods.sales_period"]
@@ -51,7 +72,7 @@ class SaleOrder(models.Model):
     def _set_default_sales_periods(self, recompute=False):
         for record in self:
             if not record.sales_period_id or recompute:
-                if record.state in ["sale", "done"]:
+                if record.state in ["draft", "sale", "done"]:
                     default = record._get_default_sales_period()
                     if default:
                         record.sales_period_id = default
@@ -79,10 +100,11 @@ class SaleOrder(models.Model):
 
     @api.model
     def search_count(self, args):
+        assignment_time = self.env.context.get("preview_sales_period_assignment_time")
         date_from = self.env.context.get("preview_sales_period_date_from")
         date_to = self.env.context.get("preview_sales_period_date_to")
 
-        args = args + self.env['sale_reporting_periods.sales_period']._get_base_domain(
-            date_from, date_to
+        args = args + self.env["sale_reporting_periods.sales_period"]._get_base_domain(
+            assignment_time, date_from, date_to
         )
         return super().search_count(args)

@@ -48,6 +48,7 @@
               <group
                 string="Conditions"
                 attrs="{'invisible': [('assign_to', 'not in', ['all', 'condition'])]}">
+                <field name="assignment_time"/>
                 <field name="date_from"/>
                 <field name="date_to"/>
                 <field
@@ -55,6 +56,7 @@
                   widget="domain"
                   attrs="{'invisible': [('assign_to', '!=', 'condition')]}"
                   context="{
+                    'preview_sales_period_assignment_time': assignment_time,
                     'preview_sales_period_date_from': date_from,
                     'preview_sales_period_date_to': date_to,
                   }"

@@ -65,17 +65,32 @@ class SalesPeriod(models.Model):
         default="none",
     )
 
+    assignment_time = fields.Selection(
+        [
+            ("create_date", "Create Date"),
+            ("order_date", "Order Date"),
+        ],
+        string="Assignment Time",
+        required=True,
+        default="order_date",
+    )
+
     @api.model
-    def _get_base_domain(self, date_from, date_to):
-        domain = [("state", "in", ["sale", "done"])]
+    def _get_base_domain(self, assignment_time, date_from, date_to):
+        domain = [("state", "in", ["draft", "sale", "done"])]
+
+        if assignment_time == "create_date":
+            date_field = "create_date"
+        else:
+            date_field = "date_order"
 
         if date_from:
             domain = [
-                ("date_order", ">=", fields.Datetime.from_string(date_from))
+                (date_field, ">=", fields.Datetime.from_string(date_from))
             ] + domain
         if date_to:
             domain = [
-                ("date_order", "<=", fields.Datetime.from_string(date_to))
+                (date_field, "<=", fields.Datetime.from_string(date_to))
             ] + domain
 
         return domain
@@ -128,7 +143,7 @@ class SalesPeriod(models.Model):
 
     def action_recompute_target_sales_periods(self):
         domain = self._get_base_domain(
-            self.date_from, self.date_to
+            self.assignment_time, self.date_from, self.date_to
         ) + self._parse_order_domain()
 
         self.env["sale.order"].search(domain)._set_default_sales_periods(recompute=True)

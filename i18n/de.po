@@ -43,6 +43,11 @@ msgid "Assign To"
 msgstr "Zuweisen an"
 
 #. module: sale_reporting_periods
+#: model:ir.model.fields,field_description:sale_reporting_periods.field_sale_reporting_periods_sales_period__assignment_time
+msgid "Assignment Time"
+msgstr "Zuweisungszeitpunkt"
+
+#. module: sale_reporting_periods
 #: model_terms:ir.ui.view,arch_db:sale_reporting_periods.view_sales_periods_search
 msgid "Automatically Assigned"
 msgstr "Automatisch zugewiesen"
@@ -60,7 +65,12 @@ msgstr "Bedingungen"
 #. module: sale_reporting_periods
 #: model:ir.model,name:sale_reporting_periods.model_res_config_settings
 msgid "Config Settings"
-msgstr ""
+msgstr "Konfiguration"
+
+#. module: sale_reporting_periods
+#: model:ir.model.fields.selection,name:sale_reporting_periods.selection__sale_reporting_periods_sales_period__assignment_time__create_date
+msgid "Create Date"
+msgstr "Erstellungsdatum"
 
 #. module: sale_reporting_periods
 #: model:ir.model.fields,field_description:sale_reporting_periods.field_sale_reporting_periods_sales_period__create_uid
@@ -143,6 +153,11 @@ msgid "Not Automatically Assigned"
 msgstr "Nicht Automatisch zugewiesen"
 
 #. module: sale_reporting_periods
+#: model:ir.model.fields.selection,name:sale_reporting_periods.selection__sale_reporting_periods_sales_period__assignment_time__order_date
+msgid "Order Date"
+msgstr "Auftragsdatum"
+
+#. module: sale_reporting_periods
 #: model:ir.model.fields,field_description:sale_reporting_periods.field_sale_reporting_periods_sales_period__order_domain
 #: model_terms:ir.ui.view,arch_db:sale_reporting_periods.view_sales_period_form
 msgid "Orders"
@@ -164,23 +179,23 @@ msgid "Recompute Target Sales Periods"
 msgstr "Ziel-Verkaugszeiträume neu berechnen"
 
 #. module: sale_reporting_periods
-#: model:ir.model.fields,field_description:sale_reporting_periods.field_sale_reporting_periods_sales_period__sale_order_count
-msgid "Sales Order Count"
-msgstr "# Verkaufsaufträge"
-
-#. module: sale_reporting_periods
-#: model_terms:ir.ui.view,arch_db:sale_reporting_periods.view_sales_period_tree
-#: model:ir.model,name:sale_reporting_periods.model_sale_order
-msgid "Sales Orders"
-msgstr "Verkaufsaufträge"
-
-#. module: sale_reporting_periods
 #: model:ir.model,name:sale_reporting_periods.model_sale_report
 msgid "Sales Analysis Report"
 msgstr "Verkaufsanalysebericht"
 
 #. module: sale_reporting_periods
+#: model:ir.model,name:sale_reporting_periods.model_sale_order
+msgid "Sales Order"
+msgstr "Verkaufsauftrag"
+
+#. module: sale_reporting_periods
+#: model:ir.model.fields,field_description:sale_reporting_periods.field_sale_reporting_periods_sales_period__sale_order_count
+msgid "Sales Order Count"
+msgstr "# Verkaufsaufträge"
+
+#. module: sale_reporting_periods
 #: model:ir.model.fields,field_description:sale_reporting_periods.field_sale_reporting_periods_sales_period__sale_order_ids
+#: model_terms:ir.ui.view,arch_db:sale_reporting_periods.view_sales_period_tree
 msgid "Sales Orders"
 msgstr "Verkaufsaufträge"
 
