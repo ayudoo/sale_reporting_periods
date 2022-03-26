@@ -166,7 +166,7 @@ msgstr "Aufträge"
 #. module: sale_reporting_periods
 #: model_terms:ir.ui.view,arch_db:sale_reporting_periods.res_config_settings_view_form
 msgid "Organize your quotations and sale order with sales periods"
-msgstr "Organisieren sie ihre Angebote und Aufträge mit Verkaufszeiträumen"
+msgstr "Organisieren Sie Ihre Angebote und Aufträge mit Verkaufszeiträumen"
 
 #. module: sale_reporting_periods
 #: model_terms:ir.ui.view,arch_db:sale_reporting_periods.res_config_settings_view_form
