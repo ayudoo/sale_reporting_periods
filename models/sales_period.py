@@ -77,7 +77,7 @@ class SalesPeriod(models.Model):
 
     @api.model
     def _get_base_domain(self, assignment_time, date_from, date_to):
-        domain = [("state", "in", ["draft", "sale", "done"])]
+        domain = [("state", "in", ["draft", "sale", "sent", "done"])]
 
         if assignment_time == "create_date":
             date_field = "create_date"
