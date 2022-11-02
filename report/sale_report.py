@@ -10,7 +10,10 @@ class SaleReport(models.Model):
         readonly=True,
     )
 
-    def _query(self, with_clause="", fields={}, groupby="", from_clause=""):
-        fields["sales_period_id"] = ", s.sales_period_id as sales_period_id"
-        groupby += ", s.sales_period_id"
-        return super()._query(with_clause, fields, groupby, from_clause)
+    def _select_additional_fields(self):
+        res = super()._select_additional_fields()
+        res["sales_period_id"] = "s.sales_period_id"
+        return res
+
+    def _group_by_sale(self):
+        return super()._group_by_sale() + ", s.sales_period_id"
