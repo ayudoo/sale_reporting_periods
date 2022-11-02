@@ -104,7 +104,7 @@ class SaleOrder(models.Model):
         date_from = self.env.context.get("preview_sales_period_date_from")
         date_to = self.env.context.get("preview_sales_period_date_to")
 
-        if assignment_time or date_from or date_to:
+        if assignment_time:
             args = args + self.env[
                 "sale_reporting_periods.sales_period"
             ]._get_base_domain(assignment_time, date_from, date_to)
