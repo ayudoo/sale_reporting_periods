@@ -87,11 +87,12 @@ class SaleOrder(models.Model):
         store=True,
     )
 
-    @api.model
-    def create(self, values):
-        record = super().create(values)
-        record._set_default_sales_periods()
-        return record
+    @api.model_create_multi
+    def create(self, values_list):
+        records = super().create(values_list)
+        for record in records:
+            record._set_default_sales_periods()
+        return records
 
     def write(self, values):
         r = super().write(values)

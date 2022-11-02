@@ -119,22 +119,32 @@ class SalesPeriod(models.Model):
         string="Orders", compute=_compute_order_domain, readonly=False, store=True
     )
 
-    @api.model
-    def create(self, values):
-        sequence = values.get("sequence", 0)
-        values["sequence"] = sequence
-        record = super().create(values)
+    @api.model_create_multi
+    def create(self, values_list):
+        last_new_sequence = 0
+
+        for values in values_list:
+            if values.get("sequence", None):
+                sequence = values["sequence"]
+            else:
+                sequence = last_new_sequence
+                last_new_sequence += 1
+
+            values["sequence"] = sequence
+
+        records = super().create(values_list)
+
+        sequence = last_new_sequence
 
         for period in self.search(
             [
-                ("id", "!=", record.id),
-                ("sequence", ">=", sequence),
+                ("id", "not in", records.ids),
             ]
         ):
-            sequence += 1
             period.sequence = sequence
+            sequence += 1
 
-        return record
+        return records
 
     def copy(self, default=None):
         default = dict(default or {})
