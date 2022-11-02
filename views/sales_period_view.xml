@@ -74,7 +74,9 @@
             <notebook>
               <page name="sale_orders" string="Orders">
                 <group>
-                  <field name="sale_order_ids" nolabel="1"/>
+                  <group colspan="2">
+                    <field colspan="2" name="sale_order_ids" nolabel="1"/>
+                  </group>
                 </group>
               </page>
             </notebook>
