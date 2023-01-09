@@ -100,7 +100,7 @@ class SaleOrder(models.Model):
         return r
 
     @api.model
-    def search_count(self, args):
+    def search_count(self, args, **kwargs):
         assignment_time = self.env.context.get("preview_sales_period_assignment_time")
         date_from = self.env.context.get("preview_sales_period_date_from")
         date_to = self.env.context.get("preview_sales_period_date_to")
@@ -109,4 +109,4 @@ class SaleOrder(models.Model):
             args = args + self.env[
                 "sale_reporting_periods.sales_period"
             ]._get_base_domain(assignment_time, date_from, date_to)
-        return super().search_count(args)
+        return super().search_count(args, **kwargs)
