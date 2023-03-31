@@ -72,7 +72,7 @@ class SaleOrder(models.Model):
     def _set_default_sales_periods(self, recompute=False):
         for record in self:
             if not record.sales_period_id or recompute:
-                if record.state in ["draft", "sale", "done"]:
+                if record.state in ["draft", "sent", "sale", "done"]:
                     default = record._get_default_sales_period()
                     if default:
                         record.sales_period_id = default
