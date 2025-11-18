@@ -39,22 +39,20 @@
               name="web_ribbon"
               title="Archived"
               bg_sales_period="bg-danger"
-              attrs="{'invisible': [('active', '=', True)]}"/>
+              invisible="active"/>
             <group>
               <group string="Sales Period">
                 <field name="name"/>
                 <field name="assign_to"/>
               </group>
-              <group
-                string="Conditions"
-                attrs="{'invisible': [('assign_to', 'not in', ['all', 'condition'])]}">
+              <group string="Conditions" invisible="assign_to not in ['all', 'condition']">
                 <field name="assignment_time"/>
                 <field name="date_from"/>
                 <field name="date_to"/>
                 <field
                   name="order_domain"
                   widget="domain"
-                  attrs="{'invisible': [('assign_to', '!=', 'condition')]}"
+                  invisible="assign_to != 'condition'"
                   context="{
                     'preview_sales_period_assignment_time': assignment_time,
                     'preview_sales_period_date_from': date_from,
@@ -63,7 +61,7 @@
                   options="{'model': 'sale.order'}"/>
                 <div colspan="2">
                   <button
-                    name='action_recompute_target_sales_periods'
+                    name="action_recompute_target_sales_periods"
                     icon="fa-refresh"
                     type="object"
                     string="Recompute Target Sales Periods"
@@ -93,8 +91,8 @@
           <field name="sequence" widget="handle"/>
           <field name="name"/>
           <field name="assign_to"/>
-          <field name="date_from" attrs="{'invisible': [('assign_to', '=', 'none')]}"/>
-          <field name="date_to" attrs="{'invisible': [('assign_to', '=', 'none')]}"/>
+          <field name="date_from" invisible="assign_to == 'none'"/>
+          <field name="date_to" invisible="assign_to == 'none'"/>
           <field name="sale_order_count" string="Sales Orders"/>
         </tree>
       </field>
@@ -107,7 +105,8 @@
       <field name="view_id" ref="view_sales_period_tree"/>
     </record>
 
-    <menuitem id="menu_report_product_all"
+    <menuitem
+      id="menu_report_product_all"
       name="Sales"
       action="sale.action_order_report_all"
       parent="sale.menu_sale_report"
