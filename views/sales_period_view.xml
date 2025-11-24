@@ -87,14 +87,14 @@
       <field name="name">sale_reporting_periods.sales_period.tree</field>
       <field name="model">sale_reporting_periods.sales_period</field>
       <field name="arch" type="xml">
-        <tree string="Sales Period">
+        <list string="Sales Period">
           <field name="sequence" widget="handle"/>
           <field name="name"/>
           <field name="assign_to"/>
           <field name="date_from" invisible="assign_to == 'none'"/>
           <field name="date_to" invisible="assign_to == 'none'"/>
           <field name="sale_order_count" string="Sales Orders"/>
-        </tree>
+        </list>
       </field>
     </record>
 

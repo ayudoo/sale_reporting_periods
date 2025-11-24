@@ -8,7 +8,7 @@ Sale Reporting Periods
 
 Filter and organize your sale orders by you custom sales periods.
 
-**This is the Odoo 17 branch**
+**This is the Odoo 18 branch**
 
 **Table of contents**
 
