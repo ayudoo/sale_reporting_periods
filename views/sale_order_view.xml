@@ -12,4 +12,15 @@
     </field>
   </record>
 
+  <record id="sale_order_tree" model="ir.ui.view">
+    <field name="name">sale.order.list.inherit.sales_period</field>
+    <field name="model">sale.order</field>
+    <field name="inherit_id" ref="sale.sale_order_tree"/>
+    <field name="arch" type="xml">
+      <field name="date_order" position="after">
+        <field name="sales_period_id" optional="show"/>
+      </field>
+    </field>
+  </record>
+
 </odoo>
